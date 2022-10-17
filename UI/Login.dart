@@ -1,5 +1,6 @@
 import 'package:aplikasi_bioskop/UI/MainMenu.dart';
 import 'package:aplikasi_bioskop/UI/Register.dart';
+import 'package:aplikasi_bioskop/UI/Forgot.dart';
 import 'package:flutter/material.dart';
 
 class LoginPages extends StatelessWidget {
@@ -49,7 +50,7 @@ class LoginPages extends StatelessWidget {
                         borderSide: BorderSide(color: Colors.blue),
                       ),
                       icon: Icon(Icons.email),
-                      labelText: "Enter Email or Username",
+                      labelText: "Enter Email",
                     ),
                   ),
                 ),
@@ -77,14 +78,14 @@ class LoginPages extends StatelessWidget {
                   width: double.infinity,
                   child: TextButton(
                     child: const Text(
-                      'Forget Password?',
+                      'Forgot Password?',
                       style:
                           TextStyle(fontSize: 15, fontWeight: FontWeight.w700),
                       textAlign: TextAlign.right,
                     ),
                     onPressed: (() {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => const RegisterPages()));
+                          builder: (context) => const ForgotPass()));
                     }),
                   ),
                 ),
