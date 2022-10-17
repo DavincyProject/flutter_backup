@@ -1,5 +1,4 @@
-import 'dart:html';
-
+import 'package:aplikasi_bioskop/UI/MainMenu.dart';
 import 'package:aplikasi_bioskop/UI/Register.dart';
 import 'package:flutter/material.dart';
 
@@ -75,7 +74,7 @@ class LoginPages extends StatelessWidget {
                 ),
                 Container(
                   margin: EdgeInsets.all(0),
-                  width: 300,
+                  width: double.infinity,
                   child: TextButton(
                     child: const Text(
                       'Forget Password?',
@@ -117,6 +116,22 @@ class LoginPages extends StatelessWidget {
                       onPressed: (() {
                         Navigator.of(context).push(MaterialPageRoute(
                             builder: (context) => const RegisterPages()));
+                      }),
+                    )
+                  ],
+                  mainAxisAlignment: MainAxisAlignment.center,
+                ),
+                Row(
+                  children: <Widget>[
+                    TextButton(
+                      child: const Text(
+                        'Skip for Now',
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.w700),
+                      ),
+                      onPressed: (() {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => const MainMenu()));
                       }),
                     )
                   ],
