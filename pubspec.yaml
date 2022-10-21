@@ -62,6 +62,7 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+    - assets/filmposter/
 
   fonts:
     - family: Nexa
