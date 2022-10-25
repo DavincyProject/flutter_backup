@@ -1,143 +1,198 @@
-import 'package:aplikasi_bioskop/Pages/HomePage.dart';
-import 'package:aplikasi_bioskop/UI/Register.dart';
-import 'package:aplikasi_bioskop/UI/Forgot.dart';
 import 'package:flutter/material.dart';
 
-class LoginPages extends StatelessWidget {
-  const LoginPages({super.key});
+class Login extends StatelessWidget {
+  const Login({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: null,
-      body: Padding(
-        padding: const EdgeInsets.only(top: 80),
-        child: SingleChildScrollView(
-          child: Center(
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.only(top: 80),
+          child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Image.asset(
-                  'assets/images/loginilus.png',
-                  fit: BoxFit.cover,
-                  width: 310,
-                  height: 200,
-                ),
-                Container(
-                  alignment: Alignment.topLeft,
-                  padding: EdgeInsets.only(bottom: 2, left: 47),
-                  child: Text(
-                    "Login",
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.w900,
-                    ),
+              children: [
+                InkWell(
+                  onTap: () {
+                    Navigator.pop(context); //untuk kembali ke halaman awal
+                  },
+                  child: Icon(
+                    Icons.arrow_back_ios_new,
+                    color: Colors.black,
+                    size: 30,
                   ),
                 ),
+                SizedBox(height: 10),
                 Container(
-                  padding: const EdgeInsets.all(5),
-                  width: 400,
-                  child: TextField(
-                    decoration: InputDecoration(
-                      enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.blue),
+                  child: Column(
+                    children: [
+                      Text(
+                        "Welcome Back",
+                        style: TextStyle(
+                          fontSize: 32,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xff464444),
+                        ),
                       ),
-                      focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.blue),
+                      Text(
+                        "Login to your acount for buying ticket and customizing your account",
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w400,
+                        ),
+                        textAlign: TextAlign.center,
                       ),
-                      border: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.blue),
-                      ),
-                      icon: Icon(Icons.email),
-                      labelText: "Enter Email",
-                    ),
+                    ],
                   ),
                 ),
+                SizedBox(height: 25),
                 Container(
-                  padding: const EdgeInsets.all(5),
-                  width: 400,
-                  child: TextField(
-                    decoration: InputDecoration(
-                      enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.blue),
+                  child: Column(
+                    children: <Widget>[
+                      ClipRRect(
+                        child: Container(
+                          width: 350,
+                          color: Color(0xffF3F3F3),
+                          child: Material(
+                            elevation: 18,
+                            child: TextField(
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              decoration: InputDecoration(
+                                hintText: "Username , Email & Phone Number",
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.white54),
+                                  borderRadius: BorderRadius.circular(17),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.white54),
+                                  borderRadius: BorderRadius.circular(17),
+                                ),
+                                fillColor: Color(0xffF3F3F3),
+                                filled: true,
+                              ),
+                            ),
+                          ),
+                        ),
                       ),
-                      focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.blue),
+                      SizedBox(height: 10),
+                      ClipRRect(
+                        child: Container(
+                          width: 350,
+                          color: Color(0xffF3F3F3),
+                          child: Material(
+                            elevation: 18,
+                            child: TextField(
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              decoration: InputDecoration(
+                                hintText: "Password",
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.white),
+                                  borderRadius: BorderRadius.circular(17),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.white),
+                                  borderRadius: BorderRadius.circular(17),
+                                ),
+                                fillColor: Color(0xffF3F3F3),
+                                filled: true,
+                              ),
+                            ),
+                          ),
+                        ),
                       ),
-                      border: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.blue),
-                      ),
-                      icon: Icon(Icons.lock),
-                      labelText: "Enter Password",
-                    ),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.all(0),
-                  width: double.infinity,
-                  child: TextButton(
-                    child: const Text(
-                      'Forgot Password?',
-                      style:
-                          TextStyle(fontSize: 15, fontWeight: FontWeight.w700),
-                      textAlign: TextAlign.right,
-                    ),
-                    onPressed: (() {
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => const ForgotPass()));
-                    }),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(top: 10),
-                  width: 250,
-                  height: 50,
-                  child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          shadowColor: null,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10))),
-                      child:
-                          const Text("Login", 
+                      SizedBox(height: 8),
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          textAlign: TextAlign.end,
+                          "Forgot Password ?",
                           style: TextStyle(
-                            fontSize: 25,
-                            fontWeight: FontWeight.w700)),
-                      onPressed: () {}),
-                ),
-                Row(
-                  children: <Widget>[
-                    Text("Does not have account?"),
-                    TextButton(
-                      child: const Text(
-                        'Register',
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.w700),
+                            color: Colors.lightBlue,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
                       ),
-                      onPressed: (() {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => const RegisterPages()));
-                      }),
-                    )
-                  ],
-                  mainAxisAlignment: MainAxisAlignment.center,
-                ),
-                Row(
-                  children: <Widget>[
-                    TextButton(
-                      child: const Text(
-                        'Skip for Now',
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.w700),
+                      SizedBox(height: 8),
+                      Container(
+                        child: Column(
+                          children: [
+                            SizedBox(
+                              width: 350,
+                              height: 50,
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  primary: Color(0xff303C42),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                ),
+                                onPressed: () {},
+                                child: Text(
+                                  "Sign in",
+                                  style: TextStyle(
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 20),
+                            SizedBox(
+                              width: double.infinity,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Expanded(
+                                    child: Divider(
+                                      indent: 20.0,
+                                      endIndent: 10.0,
+                                      thickness: 1,
+                                      color: Color(0xff676066),
+                                    ),
+                                  ),
+                                  Text(
+                                    "Or Sign up With",
+                                    style: TextStyle(
+                                      color: Color(0xff555252),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Divider(
+                                      indent: 10.0,
+                                      endIndent: 20.0,
+                                      thickness: 1,
+                                      color: Color(0xff676066),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(height: 30),
+                            Container(
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                children: [
+                                  Image.asset('assets/icons/Google.png'),
+                                  Image.asset('assets/icons/Facebook.png'),
+                                  Image.asset('assets/icons/Apple.png'),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                      onPressed: (() {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => const NewMenu()));
-                      }),
-                    )
-                  ],
-                  mainAxisAlignment: MainAxisAlignment.center,
+                    ],
+                  ),
                 ),
+                Container(),
               ],
             ),
           ),

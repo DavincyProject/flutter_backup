@@ -1,116 +1,172 @@
 import 'package:flutter/material.dart';
-import 'package:aplikasi_bioskop/UI/Login.dart';
 
-class RegisterPages extends StatelessWidget {
-  const RegisterPages({super.key});
+class Register extends StatelessWidget {
+  const Register({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: null,
-      body: Padding(
-        padding: const EdgeInsets.only(top: 35),
-        child: SingleChildScrollView(
-          child: Center(
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.only(top: 80),
+          child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Image.asset(
-                  'assets/images/signupilus.png',
-                  fit: BoxFit.cover,
-                  width: 310,
-                  height: 200,
-                ),
-                Container(
-                  width: 350,
-                  child: Text(
-                    "Sign Up",
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 30,
-                      fontWeight: FontWeight.w900,
-                    ),
+              children: [
+                InkWell(
+                  onTap: () {
+                    Navigator.pop(context); //untuk kembali ke halaman awal
+                  },
+                  child: Icon(
+                    Icons.arrow_back_ios_new,
+                    color: Colors.black,
+                    size: 30,
                   ),
                 ),
+                SizedBox(height: 10),
                 Container(
-                  width: 350,
-                  child: TextField(
-                    decoration: InputDecoration(
-                      icon: Icon(Icons.email),
-                      labelText: "Email",
-                    ),
-                  ),
-                ),
-                Container(
-                  width: 350,
-                  child: TextField(
-                    decoration: InputDecoration(
-                      icon: Icon(Icons.lock),
-                      labelText: "Password",
-                    ),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(bottom: 10),
-                  width: 350,
-                  child: TextField(
-                    decoration: InputDecoration(
-                      icon: Icon(Icons.phone),
-                      labelText: "Phone Number",
-                    ),
-                  ),
-                ),
-                Column(
-                  
-                  children: <Widget>[
-                    
-                    Text(r"By signing up, you're agree to our"),
-                    TextButton(
-                      child: const Text(
-                        "Terms & Conditions",
+                  child: Column(
+                    children: [
+                      Text(
+                        "Welcome",
                         style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.w700),
+                          fontSize: 32,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xff464444),
+                        ),
                       ),
-                      onPressed: () {},
-                    ),
-                  ],
-                  mainAxisAlignment: MainAxisAlignment.center,
-                ),
-                Container(
-                  margin: EdgeInsets.only(top: 10),
-                  width: 250,
-                  height: 50,
-                  child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          shadowColor: null,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10))),
-                      child: const Text("Continue",
-                          style: TextStyle(
-                              fontSize: 25, fontWeight: FontWeight.w700)),
-                      onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => const LoginPages()));
-                      }),
-                ),
-                Row(
-                  children: <Widget>[
-                    Text("Already Have an account?"),
-                    TextButton(
-                      child: const Text(
-                        "Login",
+                      Text(
+                        "Register new account to access newest content",
                         style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.w700),
+                          fontSize: 18,
+                          fontWeight: FontWeight.w400,
+                        ),
+                        textAlign: TextAlign.center,
                       ),
-                      onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => const LoginPages()));
-                      },
-                    ),
-                  ],
-                  mainAxisAlignment: MainAxisAlignment.center,
+                    ],
+                  ),
                 ),
+                SizedBox(height: 25),
+                Container(
+                  child: Column(
+                    children: <Widget>[
+                      ClipRRect(
+                        child: Container(
+                          width: 350,
+                          color: Color(0xffF3F3F3),
+                          child: Material(
+                            elevation: 18,
+                            child: TextField(
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              decoration: InputDecoration(
+                                hintText: "Email",
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.white54),
+                                  borderRadius: BorderRadius.circular(17),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.white54),
+                                  borderRadius: BorderRadius.circular(17),
+                                ),
+                                fillColor: Color(0xffF3F3F3),
+                                filled: true,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      ClipRRect(
+                        child: Container(
+                          width: 350,
+                          color: Color(0xffF3F3F3),
+                          child: Material(
+                            elevation: 18,
+                            child: TextField(
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              decoration: InputDecoration(
+                                hintText: "Password",
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.white),
+                                  borderRadius: BorderRadius.circular(17),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.white),
+                                  borderRadius: BorderRadius.circular(17),
+                                ),
+                                fillColor: Color(0xffF3F3F3),
+                                filled: true,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      ClipRRect(
+                        child: Container(
+                          width: 350,
+                          color: Color(0xffF3F3F3),
+                          child: Material(
+                            elevation: 18,
+                            child: TextField(
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              decoration: InputDecoration(
+                                hintText: "Confirm New Password ",
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.white),
+                                  borderRadius: BorderRadius.circular(17),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.white),
+                                  borderRadius: BorderRadius.circular(17),
+                                ),
+                                fillColor: Color(0xffF3F3F3),
+                                filled: true,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      Container(
+                        child: Column(
+                          children: [
+                            SizedBox(
+                              width: 350,
+                              height: 50,
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  primary: Color(0xff303C42),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                ),
+                                onPressed: () {},
+                                child: Text(
+                                  "Register",
+                                  style: TextStyle(
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(),
               ],
             ),
           ),

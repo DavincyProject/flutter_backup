@@ -12,11 +12,15 @@ import 'package:aplikasi_bioskop/Pages/Moviepage/MoviePage6.dart';
 import 'package:aplikasi_bioskop/Pages/Moviepage/MoviePage7.dart';
 import 'package:aplikasi_bioskop/Pages/Moviepage/MoviePage8.dart';
 import 'package:aplikasi_bioskop/Pages/Moviepage/MoviePage9.dart';
-import 'package:aplikasi_bioskop/UI/Login.dart';
+import 'package:aplikasi_bioskop/UI/NewLogin.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
   runApp(const MyApp());
 }
 
@@ -28,7 +32,7 @@ class MyApp extends StatelessWidget {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(fontFamily: 'Nexa'),
+      theme: ThemeData(fontFamily: 'Poppins'),
       routes: {
         "/": (context) => NewMenu(),
         "CategoryPage": (context) => CategoryPage(),
@@ -44,7 +48,7 @@ class MyApp extends StatelessWidget {
         "MoviePage9": (context) => MoviePage9(),
         "MoviePage10": (context) => MoviePage10(),
         "MoviePage11": (context) => MoviePage11(),
-        "LoginPages": (context) => LoginPages(),
+        "NewLogin": (context) => NewLogin(),
       },
     );
   }
