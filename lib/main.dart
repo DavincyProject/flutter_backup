@@ -13,6 +13,7 @@ import 'package:aplikasi_bioskop/Pages/Moviepage/MoviePage7.dart';
 import 'package:aplikasi_bioskop/Pages/Moviepage/MoviePage8.dart';
 import 'package:aplikasi_bioskop/Pages/Moviepage/MoviePage9.dart';
 import 'package:aplikasi_bioskop/LoginUI/NewLogin.dart';
+import 'package:aplikasi_bioskop/Pages/SettingsPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -45,6 +46,7 @@ class MyApp extends StatelessWidget {
         "MoviePage10": (context) => MoviePage10(), //menuju Movie page di dalam folder Pages>MoviePage
         "MoviePage11": (context) => MoviePage11(), //menuju Movie page di dalam folder Pages>MoviePage
         "NewLogin": (context) => NewLogin(), //menuju NewLogin di dalam folder LoginUI
+        "SettingsPage": (context) => SettingsPage(), //menuju NewLogin di dalam folder LoginUI
       },
     );
   }
